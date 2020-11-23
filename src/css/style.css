@@ -1,0 +1,200 @@
+html {
+  height: 100vh;
+}
+body {
+  background-color: rgb(255, 234, 139);
+}
+header {
+  background-color: rgb(250, 204, 0);
+}
+.header-title {
+  text-align: center;
+}
+.header-title > h1 {
+  color: white;
+  font-weight: bold;
+}
+.header-left, .header-right {
+  vertical-align: middle;
+  text-align: center;
+}
+.header-right label {
+  margin: 0 5px 0 0;
+}
+.left-nav, .right-content {
+  background-color: rgb(255, 226, 96);
+  border-style: solid;
+  border-width: 1px;
+}
+header, .left-nav, .right-content {
+  padding-top: 10px;
+  border-color: rgba(216, 191, 80, 0.5);
+}
+.right-content {  
+  text-align: center;
+}
+.main-content {
+  padding: 3%;
+}
+.form-flex {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 2px 4px 2px;
+}
+.form-flex > input {
+  margin-right: 4px;
+}
+.form-flex > button {
+  background-color: rgb(107, 107, 250);
+  color: white;
+}
+.table-responsive {
+  background-color: rgb(223, 233, 255);
+}
+.container-fluid {  
+  height: 100vh;
+}
+.contents-row {
+  height: 100%;
+}
+
+/* グラフ部 */
+.chart-select-button-wrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.chart-select-button {
+  border: 1px solid;
+  border-radius: 8px / 8px;
+  margin: 5% 1% 5% 1%;
+  cursor: pointer;
+  background-color: #0066CC;
+  color: white;
+  border-color: white;
+  height: 50px;
+  width: 30%;
+  vertical-align: middle;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.chart-select-button label {
+  vertical-align: middle;
+  width: 100%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.chart-selected {
+  background-color: #53b9fd;
+  color: black;
+}
+.chart-container {
+  margin-top: 20px;
+  position: relative;
+  height:40vh;
+  width:100%
+}
+
+/* することボタン */
+.action-select-button-wrapper {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: start;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.action-select-button {
+  border: 1px solid;
+  border-radius: 8px / 8px;
+  margin: 2px;
+  cursor: pointer;
+  background-color: #0066CC;
+  color: white;
+  border-color: white;
+  height: 50px;
+  width: 100px;
+  vertical-align: middle;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.action-select-button label {
+  vertical-align: middle;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5px;
+  cursor: pointer;
+}
+.cls-normal {
+  background-color: rgb(228, 191, 25);
+}
+.cls-to-do {
+  background-color: rgb(192, 115, 0);
+}
+.cls-to-stop {
+  background-color: rgb(116, 116, 116);
+}
+
+/* Bootstrapデザイン補正 */
+.bootstrap-customize-table {
+  margin-bottom: 0px;
+}
+.bootstrap-customize-table th {
+  color: white;
+}
+.bootstrap-customize-table thead {
+  background-color: rgb(106, 106, 216);
+}
+.bootstrap-customize-table thead th {
+  text-align: center;
+}
+.bootstrap-customize-table .tbl-button-cell {
+  width: 15%;
+  text-align: center;
+  padding: 5px;
+}
+.bootstrap-customize-table td {
+  vertical-align: middle;
+}
+.bootstrap-customize-table .tbl-button-cell .tbl-del-button {
+  border: 1px solid;
+  border-radius: 8px / 8px;
+  margin: 2px auto;
+  cursor: pointer;
+  background-color: rgb(214, 114, 0);
+  color: white;
+  border-color: white;
+  height: 40px;
+  width: 60px;
+  vertical-align: middle;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.bootstrap-customize-table .tbl-button-cell .tbl-del-button label {
+  vertical-align: middle;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5px;
+  cursor: pointer;
+}
