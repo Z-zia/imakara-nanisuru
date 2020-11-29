@@ -1,30 +1,43 @@
 /* eslint-disable */
 import React from "react";
+import { connect } from "react-redux";
 import Constants from "../../libs/common/Constants";
-
-// import Constants from "../../libs/common/Constants";
+import { initToggleOffList } from "../../actions/clsActionActions";
+import ToggleNormalButton from "../atoms/ToggleNormalButton";
+import ToggleTodoButton from "../atoms/ToggleTodoButton";
+import ToggleTostopButton from "../atoms/ToggleTostopButton";
 import ContentWrapperTemplate from "../templates/ContentWrapperTemplate";
 
-export default class PochiPochi extends React.Component {
+@connect((store) => {
+  return {
+    toggleList: store.clsActionReducer.toggleList
+  };
+})
+class PochiPochi extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  componentDidMount() {
+    this.props.dispatch(initToggleOffList());
+  }
+
   render() {
     let mainContent = 
       <div className="col-7 main-content">
         <div className="row">
           <div className="action-select-button-wrapper">
-            <div className="action-select-button cls-normal"><label>お仕事</label></div>
-            <div className="action-select-button cls-normal"><label>プライベート</label></div>
-            <div className="action-select-button cls-normal"><label>移動</label></div>
-            <div className="action-select-button cls-normal"><label>寝る</label></div>
-            <div className="action-select-button cls-to-do"><label>勉強</label></div>
-            <div className="action-select-button cls-to-stop"><label>人に言えないやつ</label></div>
-            <div className="action-select-button cls-to-do"><label>ラン</label></div>
-            <div className="action-select-button cls-to-do"><label>読書</label></div>
-            <div className="action-select-button cls-normal"><label>飲み会</label></div>
-            <div className="action-select-button cls-normal"><label>掃除</label></div>
-            <div className="action-select-button cls-to-stop"><label>喫煙</label></div>
+            <ToggleNormalButton buttonText="仕事"></ToggleNormalButton>
+            <ToggleNormalButton buttonText="プライベート"></ToggleNormalButton>
+            <ToggleNormalButton buttonText="移動"></ToggleNormalButton>
+            <ToggleNormalButton buttonText="寝る"></ToggleNormalButton>
+            <ToggleTodoButton buttonText="勉強"></ToggleTodoButton>
+            <ToggleTostopButton buttonText="人に言えないやつ"></ToggleTostopButton>
+            <ToggleTodoButton buttonText="ラン"></ToggleTodoButton>
+            <ToggleTodoButton buttonText="読書"></ToggleTodoButton>
+            <ToggleNormalButton buttonText="飲み会"></ToggleNormalButton>
+            <ToggleNormalButton buttonText="掃除"></ToggleNormalButton>
+            <ToggleTostopButton buttonText="喫煙"></ToggleTostopButton>
           </div>
         </div>
         
@@ -134,3 +147,4 @@ export default class PochiPochi extends React.Component {
     );
   }
 }
+export default PochiPochi;

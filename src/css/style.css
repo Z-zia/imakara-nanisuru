@@ -144,11 +144,20 @@ header, .left-nav, .right-content {
 .cls-normal {
   background-color: rgb(228, 191, 25);
 }
+.cls-normal-selected {
+  background-color: rgb(175, 146, 18);
+}
 .cls-to-do {
   background-color: rgb(192, 115, 0);
 }
+.cls-to-do-selected {
+  background-color: rgb(153, 92, 1);
+}
 .cls-to-stop {
   background-color: rgb(116, 116, 116);
+}
+.cls-to-stop-selected {
+  background-color: rgb(75, 74, 74);
 }
 
 /* Bootstrapデザイン補正 */
