@@ -23,7 +23,7 @@ export default class SettingNormal extends React.Component {
             <table className="table table-striped table-bordered table-default bootstrap-customize-table">
               <thead>
                 <tr>
-                  <th colspan="2" scope="col">普段やること</th>
+                  <th colSpan="2" scope="col">普段やること</th>
                 </tr>
               </thead>
               <tbody>

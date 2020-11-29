@@ -14,7 +14,7 @@ export default class MenuTemplate extends React.Component {
   render() {
     let Links = [];
     for (const [key, name] of this.props.pages) {
-      Links.push(<li className={key == this.state.activeLink? 'active' : 'inactive'}>
+      Links.push(<li key={key} className={key == this.state.activeLink? 'active' : 'inactive'}>
           <Link to={key}>{name}</Link>
       </li>);
     };

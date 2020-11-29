@@ -23,7 +23,7 @@ export default class SettingToDo extends React.Component {
             <table className="table table-striped table-bordered table-default bootstrap-customize-table">
               <thead>
                 <tr>
-                  <th colspan="2" scope="col">やりたいこと</th>
+                  <th colSpan="2" scope="col">やりたいこと</th>
                 </tr>
               </thead>
               <tbody>

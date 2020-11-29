@@ -15,7 +15,7 @@ class ToggleTodoButton extends React.Component {
 
   render() {
     return (
-      <ToggleButtonTemplate buttonText={this.props.buttonText} clickAction={this.toggle.bind(this)} buttonStyle={Constants.STYLE_ACTION_ATTR_TODO} />
+      <ToggleButtonTemplate buttonText={this.props.buttonText} clickAction={this.toggle.bind(this)} buttonStyle={Constants.STYLE_ACTION_ATTR_TODO} actionSelected={this.props.actionSelected} />
     );
   }
 

@@ -23,21 +23,42 @@ class PochiPochi extends React.Component {
   }
 
   render() {
+    
+    // <ToggleNormalButton buttonText="仕事"></ToggleNormalButton>
+    // <ToggleNormalButton buttonText="プライベート"></ToggleNormalButton>
+    // <ToggleNormalButton buttonText="移動"></ToggleNormalButton>
+    // <ToggleNormalButton buttonText="寝る"></ToggleNormalButton>
+    // <ToggleTodoButton buttonText="勉強"></ToggleTodoButton>
+    // <ToggleTostopButton buttonText="人に言えないやつ"></ToggleTostopButton>
+    // <ToggleTodoButton buttonText="ラン"></ToggleTodoButton>
+    // <ToggleTodoButton buttonText="読書"></ToggleTodoButton>
+    // <ToggleNormalButton buttonText="飲み会"></ToggleNormalButton>
+    // <ToggleNormalButton buttonText="掃除"></ToggleNormalButton>
+    // <ToggleTostopButton buttonText="喫煙"></ToggleTostopButton>
+    
+    // トグルボタンを押下状況のレイアウトで描画
+    let toggleButtons = [];
+    for (let obj of this.props.toggleList) {
+      switch (obj.actionAttr) {
+        case Constants.ACTION_ATTR_NORMAL:
+          toggleButtons.push(<ToggleNormalButton buttonText={obj.name} actionSelected={obj.toggled}></ToggleNormalButton>);
+          break;
+        case Constants.ACTION_ATTR_TODO:
+          toggleButtons.push(<ToggleTodoButton buttonText={obj.name} actionSelected={obj.toggled}></ToggleTodoButton>);
+          break;
+        case Constants.ACTION_ATTR_TOSTOP:
+          toggleButtons.push(<ToggleTostopButton buttonText={obj.name} actionSelected={obj.toggled}></ToggleTostopButton>);
+          break;
+        default:
+          break;
+      }
+    }
+
     let mainContent = 
       <div className="col-7 main-content">
         <div className="row">
           <div className="action-select-button-wrapper">
-            <ToggleNormalButton buttonText="仕事"></ToggleNormalButton>
-            <ToggleNormalButton buttonText="プライベート"></ToggleNormalButton>
-            <ToggleNormalButton buttonText="移動"></ToggleNormalButton>
-            <ToggleNormalButton buttonText="寝る"></ToggleNormalButton>
-            <ToggleTodoButton buttonText="勉強"></ToggleTodoButton>
-            <ToggleTostopButton buttonText="人に言えないやつ"></ToggleTostopButton>
-            <ToggleTodoButton buttonText="ラン"></ToggleTodoButton>
-            <ToggleTodoButton buttonText="読書"></ToggleTodoButton>
-            <ToggleNormalButton buttonText="飲み会"></ToggleNormalButton>
-            <ToggleNormalButton buttonText="掃除"></ToggleNormalButton>
-            <ToggleTostopButton buttonText="喫煙"></ToggleTostopButton>
+            {toggleButtons}
           </div>
         </div>
         

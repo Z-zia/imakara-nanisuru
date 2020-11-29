@@ -11,11 +11,11 @@ import ToggleButtonTemplate from "../templates/ToggleButtonTemplate";
 class ToggleTostopButton extends React.Component {
   render() {
     return (
-      <ToggleButtonTemplate buttonText={this.props.buttonText} clickAction={this.toggle.bind(this)} buttonStyle={Constants.STYLE_ACTION_ATTR_TOSTOP} />
+      <ToggleButtonTemplate buttonText={this.props.buttonText} clickAction={this.toggle.bind(this)} buttonStyle={Constants.STYLE_ACTION_ATTR_TOSTOP} actionSelected={this.props.actionSelected} />
     );
   }
 
-  toggle(){
+  toggle(buttonText){
     this.props.dispatch(toggleClsAction(buttonText));
   }
 }

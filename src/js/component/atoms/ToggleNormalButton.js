@@ -11,11 +11,11 @@ import ToggleButtonTemplate from "../templates/ToggleButtonTemplate";
 class ToggleNormalButton extends React.Component {
   render() {
     return (
-      <ToggleButtonTemplate buttonText={this.props.buttonText} clickAction={this.toggle.bind(this)} buttonStyle={Constants.STYLE_ACTION_ATTR_NORMAL} />
+      <ToggleButtonTemplate buttonText={this.props.buttonText} clickAction={this.toggle.bind(this)} buttonStyle={Constants.STYLE_ACTION_ATTR_NORMAL} actionSelected={this.props.actionSelected} />
     );
   }
 
-  toggle(){
+  toggle(buttonText){
     this.props.dispatch(toggleClsAction(buttonText));
   }
 }
