@@ -3,6 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Constants from "../../libs/common/Constants";
 import { initToggleOffList } from "../../actions/clsActionActions";
+import AddListButton from "../atoms/AddListButton";
 import ToggleNormalButton from "../atoms/ToggleNormalButton";
 import ToggleTodoButton from "../atoms/ToggleTodoButton";
 import ToggleTostopButton from "../atoms/ToggleTostopButton";
@@ -23,37 +24,25 @@ class PochiPochi extends React.Component {
   }
 
   render() {
-    
-    // <ToggleNormalButton buttonText="仕事"></ToggleNormalButton>
-    // <ToggleNormalButton buttonText="プライベート"></ToggleNormalButton>
-    // <ToggleNormalButton buttonText="移動"></ToggleNormalButton>
-    // <ToggleNormalButton buttonText="寝る"></ToggleNormalButton>
-    // <ToggleTodoButton buttonText="勉強"></ToggleTodoButton>
-    // <ToggleTostopButton buttonText="人に言えないやつ"></ToggleTostopButton>
-    // <ToggleTodoButton buttonText="ラン"></ToggleTodoButton>
-    // <ToggleTodoButton buttonText="読書"></ToggleTodoButton>
-    // <ToggleNormalButton buttonText="飲み会"></ToggleNormalButton>
-    // <ToggleNormalButton buttonText="掃除"></ToggleNormalButton>
-    // <ToggleTostopButton buttonText="喫煙"></ToggleTostopButton>
-    
     // トグルボタンを押下状況のレイアウトで描画
     let toggleButtons = [];
     for (let obj of this.props.toggleList) {
       switch (obj.actionAttr) {
         case Constants.ACTION_ATTR_NORMAL:
-          toggleButtons.push(<ToggleNormalButton buttonText={obj.name} actionSelected={obj.toggled}></ToggleNormalButton>);
+          toggleButtons.push(<ToggleNormalButton buttonText={obj.name} actionSelected={obj.toggled} />);
           break;
         case Constants.ACTION_ATTR_TODO:
-          toggleButtons.push(<ToggleTodoButton buttonText={obj.name} actionSelected={obj.toggled}></ToggleTodoButton>);
+          toggleButtons.push(<ToggleTodoButton buttonText={obj.name} actionSelected={obj.toggled} />);
           break;
         case Constants.ACTION_ATTR_TOSTOP:
-          toggleButtons.push(<ToggleTostopButton buttonText={obj.name} actionSelected={obj.toggled}></ToggleTostopButton>);
+          toggleButtons.push(<ToggleTostopButton buttonText={obj.name} actionSelected={obj.toggled} />);
           break;
         default:
           break;
       }
     }
 
+    // メインペイン
     let mainContent = 
       <div className="col-7 main-content">
         <div className="row">
@@ -65,7 +54,7 @@ class PochiPochi extends React.Component {
         <div className="row">
           <div className="form-flex">
             <input type="text" className="form-control" placeholder="コメントを入れる欄" />
-            <button className="btn btn-default">開始！</button>
+            <AddListButton buttonText="開始！" invalidButton={this.invalidButton.bind(this)}/>
           </div>            
         </div>
         <div className="row m-2">
@@ -166,6 +155,11 @@ class PochiPochi extends React.Component {
     return (
       <ContentWrapperTemplate activeLink={Constants.LINK_POCHIPOCHI} mainContent={mainContent} />
     );
+  }
+
+  // トグルボタンで選択しているものが無ければ開始ボタン無効
+  invalidButton() {
+    return this.props.toggleList.filter(obj => obj.toggled == true).length == 0;
   }
 }
 export default PochiPochi;

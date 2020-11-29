@@ -4,7 +4,7 @@ import React from "react";
 export default class ToggleButtonTemplate extends React.Component {
   render() {
     let classNames = ['action-select-button']
-    if (this.props.actionSelected == true) {
+    if (this.props.actionSelected) {
       classNames.push(this.props.buttonStyle + '-selected')
     } else {
       classNames.push(this.props.buttonStyle)

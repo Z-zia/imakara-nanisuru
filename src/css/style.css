@@ -45,10 +45,6 @@ header, .left-nav, .right-content {
 .form-flex > input {
   margin-right: 4px;
 }
-.form-flex > button {
-  background-color: rgb(107, 107, 250);
-  color: white;
-}
 .table-responsive {
   background-color: rgb(223, 233, 255);
 }
@@ -57,6 +53,31 @@ header, .left-nav, .right-content {
 }
 .contents-row {
   height: 100%;
+}
+
+/* リスト追加ボタン */
+.add-list-button {
+  width: 100px;
+  background-color: rgb(107, 107, 250);
+  border-radius: 8px / 8px;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  transition: background-color .5s;
+}
+.add-list-button-invalid {
+  background-color: gray;
+  cursor: not-allowed;
+}
+.add-list-button-valid:hover {
+  background-color: rgb(91, 219, 187);
 }
 
 /* グラフ部 */
