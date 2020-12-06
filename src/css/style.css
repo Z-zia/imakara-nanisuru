@@ -54,6 +54,12 @@ header, .left-nav, .right-content {
 .contents-row {
   height: 100%;
 }
+.text-center-justified {
+  text-align: center;
+}
+.text-left-justified {
+  text-align: left;
+}
 
 /* リスト追加ボタン */
 .add-list-button {

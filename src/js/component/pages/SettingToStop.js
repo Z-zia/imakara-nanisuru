@@ -11,7 +11,7 @@ export default class SettingToStop extends React.Component {
   }
   render() {
     let mainContent = 
-      <div className="col-7 main-content">
+      <div className="col-10 main-content">
         <div className="row">
           <div className="form-flex">
             <input type="text" className="form-control" placeholder="内容を入力" />

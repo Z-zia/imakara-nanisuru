@@ -18,7 +18,8 @@ export default function reducer(state={
       // 該当の項目のみフラグをトグルする
       for (let obj of newToggleList) {
         if (obj.name == action.payload) {
-          obj.toggled = !obj.toggled
+          obj.toggled = !obj.toggled;
+          break;
         }
       }
 

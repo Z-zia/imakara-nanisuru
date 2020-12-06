@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 })
 class AddListButton extends React.Component {
   render() {
+    // 親コンポーネントの判定条件にて、活性/非活性を切り替える。
     let classNames = ["add-list-button"]
     if (this.props.invalidButton()) {
       classNames.push("add-list-button-invalid")
@@ -23,7 +24,7 @@ class AddListButton extends React.Component {
 
   clickEvent() {
     if (!this.props.invalidButton()) {
-
+      this.props.actionMethod();
     }
   }
 }

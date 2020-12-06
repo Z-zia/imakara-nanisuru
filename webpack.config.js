@@ -6,7 +6,10 @@ module.exports = {
     path: __dirname + '/public/js',
     filename: "[name].js"
   },
-    devServer: {
+  devServer: {
+    historyApiFallback: {
+      index: 'index.html'
+    },
     contentBase: __dirname + '/public',
     port: 8080,
     publicPath: '/js/'

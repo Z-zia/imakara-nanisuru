@@ -16,16 +16,6 @@ export default class ContentWrapperTemplate extends React.Component {
             </nav>
           </div>
           {this.props.mainContent}
-          <div className="col-3 right-content">
-            <div className="chart-select-button-wrapper">
-              <div className="chart-select-button chart-selected"><label>今週</label></div>
-              <div className="chart-select-button"><label>今月</label></div>
-              <div className="chart-select-button"><label>期間<br/>指定</label></div>
-            </div>
-            <div className="chart-container">
-              <canvas id="doudattaChart"></canvas>
-            </div>
-          </div>
         </div>
       </div>
     );
